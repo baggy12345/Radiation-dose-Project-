@@ -1,0 +1,36 @@
+while True:
+    try:
+        a = int(input("How many limb and joints x-rays did you have (excluding hips)?: "))
+        b = int(input("How many teeth (single bitewing) x-rays did you have?: "))
+        c = int(input("How many teeth (panoramic) x-rays did you have?: "))
+        d = int(input("How many chest (single PA film) x-rays did you have?: "))
+        e = int(input("How many skull x-rays did you have?: "))
+        f = int(input("How many cervical spine(neck) did you have?: "))
+        g = int(input("How many hip x-rays did you have?: "))
+        h = int(input("How many thoracic spine x-rays did you have?: "))
+        i = int(input("How many pelvis x-rays did you have?: "))
+        j = int(input("How many abdomen x-rays did you have?: "))
+        k = int(input("How many lumbar spine x-rays did you have?: "))
+    except ValueError:
+        print("Sorry, try again and please enter an integer")
+        continue
+    else:
+        break
+    
+a = a*0.01
+b = b*0.01
+c = c*0.01
+d = d*0.02
+e = e*0.07
+f = f*0.08
+g = g*0.3
+h = h*0.7
+i = e*0.7
+j = f*0.7
+k = k*1.3
+
+totalRadiationExposure = str(round(a + b + c + d + e + f + g + h + i + j + k, 2))
+totalRadiationExposure_microSv = str(int(round(a + b + c + d + e + f + g + h + i + j + k, 2)*1000))
+
+print("Assuming each x-ray affects the whole body then you were exposed to " + totalRadiationExposure + " mSv")
+print("This is also " + totalRadiationExposure_microSv + " µSv")
